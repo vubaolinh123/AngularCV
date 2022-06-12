@@ -1,3 +1,5 @@
+import { IProfile } from './../../../models/profile';
+import { ProfileService } from './../../../services/profile.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-
-  constructor() { }
+  listProfile!: IProfile[]
+    
+  constructor(private profileService: ProfileService) {
+    this.showProfile()
+   } 
 
   ngOnInit(): void {
   }
-
+showProfile(){
+    this.profileService.getProfile().subscribe(data=> this.listProfile = data)
+  }
 }

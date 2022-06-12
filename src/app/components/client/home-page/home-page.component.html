@@ -46,58 +46,19 @@
         <div class="seciton-header">
             <h2 class="seciton-header__title">Feature Projects</h2>
         </div>
-        <div class="section-body">
+        <div class="section-body" *ngFor="let project of listProject">
             <div class="project__item grid md:grid-cols-[246px,auto] gap-4">
                 <div class="project__img">
-                    <img src="https://lh3.googleusercontent.com/a-/AOh14GhGY0dwqgkxDujRJqItzRmE6yZSUa1DN9wu2ISgcg=s360-p-rw-no"
-                        alt="" class="project__thumbnail" />
+                    <img src={{project.avatar}} alt="" class="project__thumbnail" />
                 </div>
                 <div class="project__content">
-                    <h3 class="project__name">Designing Dashboards</h3>
+                    <h3 class="project__name">{{project.name}}</h3>
                     <div class="project__meta">
-                        <span class="project__createat">2020</span>
-                        <a href="" class="project__category">Dashboard</a>
+                        <span class="project__createat">{{project.time}}</span>
+                        <a href="" class="project__category">{{project.category}}</a>
                     </div>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, doloribus voluptatum iusto, qui
-                        fugiat, eum laboriosam vitae facilis eius nihil cum molestias. Amet, nihil! Illo natus
-                        perspiciatis commodi laudantium dolores.
-                    </p>
-                </div>
-            </div>
-            <div class="project__item grid md:grid-cols-[246px,auto] gap-4">
-                <div class="project__img">
-                    <img src="https://lh3.googleusercontent.com/a-/AOh14GhGY0dwqgkxDujRJqItzRmE6yZSUa1DN9wu2ISgcg=s360-p-rw-no"
-                        alt="" class="project__thumbnail" width="246px" />
-                </div>
-                <div class="project__content">
-                    <h3 class="project__name">Designing Dashboards</h3>
-                    <div class="project__meta">
-                        <span class="project__createat">2020</span>
-                        <a href="" class="project__category">Dashboard</a>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, doloribus voluptatum iusto, qui
-                        fugiat, eum laboriosam vitae facilis eius nihil cum molestias. Amet, nihil! Illo natus
-                        perspiciatis commodi laudantium dolores.
-                    </p>
-                </div>
-            </div>
-            <div class="project__item grid md:grid-cols-[246px,auto] gap-4">
-                <div class="project__img">
-                    <img src="https://lh3.googleusercontent.com/a-/AOh14GhGY0dwqgkxDujRJqItzRmE6yZSUa1DN9wu2ISgcg=s360-p-rw-no"
-                        alt="" class="project__thumbnail" width="246px" />
-                </div>
-                <div class="project__content">
-                    <h3 class="project__name">Designing Dashboards</h3>
-                    <div class="project__meta">
-                        <span class="project__createat">2020</span>
-                        <a href="" class="project__category">Dashboard</a>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, doloribus voluptatum iusto, qui
-                        fugiat, eum laboriosam vitae facilis eius nihil cum molestias. Amet, nihil! Illo natus
-                        perspiciatis commodi laudantium dolores.
+                        {{project.desc}}
                     </p>
                 </div>
             </div>
