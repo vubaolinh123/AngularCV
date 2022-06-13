@@ -1,0 +1,29 @@
+<div class="bg-[#e88585] h-full flex">
+    <div class=" m-auto  bg-white p-16 rounded-xl ">
+        <h2 class="mb-6 text-center font-bold text-2xl ">
+            LOGIN TO CV
+        </h2>
+        <form nz-form [formGroup]="validateForm" class="login-form " (ngSubmit)="submitForm()">
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please input your Email!">
+                    <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="email" placeholder="Email" class="w-56 p-2" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzErrorTip=" Please input your Password!">
+                    <nz-input-group nzPrefixIcon="lock">
+                        <input type="password" nz-input formControlName="password" placeholder="Password"
+                            class="w-56 p-2" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <div class=" text-center">
+                <button nz-button
+                    class="login-form-button login-form-margin bg-[#e30000] border-[#e30000] w-full rounded"
+                    [nzType]="'primary'">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

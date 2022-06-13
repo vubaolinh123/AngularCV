@@ -1,3 +1,6 @@
+import { DangnhapComponent } from './components/client/dangnhap/dangnhap.component';
+import { FormBlogComponent } from './components/admin/Blog/form-blog/form-blog.component';
+import { ListBlogComponent } from './components/admin/Blog/list-blog/list-blog.component';
 import { FormProjectComponent } from './components/admin/Projects/form-project/form-project.component';
 import { DetalProjectComponent } from './components/client/detal-project/detal-project.component';
 import { ProjectComponent } from './components/client/project/project.component';
@@ -19,13 +22,17 @@ const routes: Routes = [
            { path: 'project', component: ProjectComponent },
            { path: 'project/:id', component: DetalProjectComponent },
         ]},
+    {path: "login", component: DangnhapComponent},
   {path: "admin", component: AdminLayoutComponent,
   children: [
-      {path: "", component: DashboardComponent},
+      {path: "", component: ListProjectComponent},
       {path: "profile", component: ListProfileComponent},
       {path: "project", component: ListProjectComponent},
       {path: "project/add", component: FormProjectComponent},
       {path: "project/:id/edit", component: FormProjectComponent},
+       {path: "blog", component: ListBlogComponent},
+       {path: "blog/add", component: FormBlogComponent},
+      {path: "blog/:id/edit", component: FormBlogComponent},
     ]}
 ];
 

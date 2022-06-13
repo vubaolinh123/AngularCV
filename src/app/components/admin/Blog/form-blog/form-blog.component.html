@@ -2,8 +2,8 @@
     <div>
         <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold text-gray-900" *ngIf="id == null">Add New Project</h1>
-                <h1 class="text-3xl font-bold text-gray-900" *ngIf="id != null ">Update Project</h1>
+                <h1 class="text-3xl font-bold text-gray-900" *ngIf="id == null">Add New Blog</h1>
+                <h1 class="text-3xl font-bold text-gray-900" *ngIf="id != null ">Update Blog</h1>
             </div>
         </header>
         <main>
@@ -18,41 +18,32 @@
                                             <div class="grid grid-cols-6 gap-6">
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label class="block text-sm font-medium text-gray-700">Name</label>
-                                                    <input type="text" placeholder="Enter Name"
-                                                        [(ngModel)]="project.name" name="name"
+                                                    <input type="text" placeholder="Enter Name" [(ngModel)]="blog.name"
+                                                        name="name"
                                                         class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
 
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
-                                                    <label class="block text-sm font-medium text-gray-700">Image</label>
-                                                    <input type="text" [(ngModel)]="project.avatar" name="avatar"
-                                                        placeholder="Enter Link Image"
-                                                        class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-                                                    <img src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg"
-                                                        id="img-preview" width="200" />
-
-                                                </div>
 
                                                 <div class="col-span-6 sm:col-span-4">
                                                     <label class="block text-sm font-medium text-gray-700">Desc</label>
-                                                    <textarea type="text" [(ngModel)]="project.desc" name="desc"
+                                                    <textarea type="text" [(ngModel)]="blog.desc" name="desc"
                                                         class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-500 rounded-md "></textarea>
                                                 </div>
 
 
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label
-                                                        class="block text-sm font-medium text-gray-700">Category</label>
-                                                    <input [(ngModel)]="project.category" type="text" name="category"
-                                                        placeholder="Enter Category"
+                                                        class="block text-sm font-medium text-gray-700">Author</label>
+                                                    <input [(ngModel)]="blog.author" type="text" name="author"
+                                                        placeholder="Enter Author"
                                                         class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                                                 </div>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label class="block text-sm font-medium text-gray-700">Time</label>
-                                                <input [(ngModel)]="project.time" name="time" type="number" min="0"
+                                                <input [(ngModel)]="blog.time" name="time" type="text"
                                                     placeholder="Enter Time"
                                                     class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
 

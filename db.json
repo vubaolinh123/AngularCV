@@ -1,4 +1,17 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "Linh",
+      "email": "vubaolinh111@gmail.com",
+      "password": "123456"
+    },
+    {
+      "email": "linh@gmail.com",
+      "password": "$2a$10$/vq6K43ZiwIb1vWiQj2F7eCncP/fOZK6rU8GCCCl4W6SWHxu1hErq",
+      "id": 2
+    }
+  ],
   "profile": [
     {
       "id": 1,
@@ -84,6 +97,13 @@
       "time": "05 Feb 2016",
       "author": "author 5",
       "desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    },
+    {
+      "id": 6,
+      "name": "Vũ Bảo Linh",
+      "time": "May 5 ",
+      "author": "Doremon",
+      "desc": "AAAA"
     }
   ]
 }

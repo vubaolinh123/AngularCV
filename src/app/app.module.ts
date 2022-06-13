@@ -26,6 +26,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -33,6 +34,10 @@ import { ListProjectComponent } from './components/admin/Projects/list-project/l
 import { ProjectComponent } from './components/client/project/project.component';
 import { DetalProjectComponent } from './components/client/detal-project/detal-project.component';
 import { FormProjectComponent } from './components/admin/Projects/form-project/form-project.component';
+import { ListBlogComponent } from './components/admin/Blog/list-blog/list-blog.component';
+import { FormBlogComponent } from './components/admin/Blog/form-blog/form-blog.component';
+import { DangkyComponent } from './components/client/dangky/dangky.component';
+import { DangnhapComponent } from './components/client/dangnhap/dangnhap.component';
 registerLocaleData(en);
 
 
@@ -54,6 +59,10 @@ registerLocaleData(en);
     ProjectComponent,
     DetalProjectComponent,
     FormProjectComponent,
+    ListBlogComponent,
+    FormBlogComponent,
+    DangkyComponent,
+    DangnhapComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +80,8 @@ registerLocaleData(en);
     NzInputModule,
     NzSkeletonModule,
     NzButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NzDividerModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
