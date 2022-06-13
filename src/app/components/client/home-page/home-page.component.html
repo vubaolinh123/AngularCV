@@ -3,40 +3,24 @@
     <div class="custom-container">
         <div class="seciton-header">
             <h2 class="seciton-header__title">Recent post</h2>
-            <a href="">View all</a>
+            <a routerLink="blog">View all</a>
         </div>
         <div class="section-body">
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="recent-post__item">
+                <div class="recent-post__item" *ngFor="let blog of twoBlog">
                     <h3 class="recent-post__title">
-                        Making a design system from scratch
+                        {{blog.name}}
                     </h3>
                     <div class="recent-post__meta">
-                        <span>12 Feb 2020</span>
+                        <span>{{blog.time}}</span>
                         <span>|</span>
-                        <a href="">Design, Pattern</a>
+                        <a href="">{{blog.author}}</a>
                     </div>
                     <p class="recent-post__desc">
-                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                        amet sint. Velit officia consequat duis enim velit mollit.
-                        Exercitation veniam consequat sunt nostrud amet.
+                        {{blog.desc}}
                     </p>
                 </div>
-                <div class="recent-post__item">
-                    <h3 class="recent-post__title">
-                        Making a design system from scratch
-                    </h3>
-                    <div class="recent-post__meta">
-                        <span>12 Feb 2020</span>
-                        <span>|</span>
-                        <a href="">Design, Pattern</a>
-                    </div>
-                    <p class="recent-post__desc">
-                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                        amet sint. Velit officia consequat duis enim velit mollit.
-                        Exercitation veniam consequat sunt nostrud amet.
-                    </p>
-                </div>
+
             </div>
         </div>
     </div>
@@ -46,11 +30,13 @@
         <div class="seciton-header">
             <h2 class="seciton-header__title">Feature Projects</h2>
         </div>
-        <div class="section-body" *ngFor="let project of listProject">
+        <div class="section-body" *ngFor="let project of threeProject">
             <div class="project__item grid md:grid-cols-[246px,auto] gap-4">
-                <div class="project__img">
-                    <img src={{project.avatar}} alt="" class="project__thumbnail" />
-                </div>
+                <a routerLink="/project/{{project.id}}">
+                    <div class="project__img">
+                        <img src={{project.avatar}} alt="" class="project__thumbnail" />
+                    </div>
+                </a>
                 <div class="project__content">
                     <h3 class="project__name">{{project.name}}</h3>
                     <div class="project__meta">

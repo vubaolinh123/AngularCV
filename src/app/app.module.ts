@@ -30,6 +30,9 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ListProjectComponent } from './components/admin/Projects/list-project/list-project.component';
+import { ProjectComponent } from './components/client/project/project.component';
+import { DetalProjectComponent } from './components/client/detal-project/detal-project.component';
+import { FormProjectComponent } from './components/admin/Projects/form-project/form-project.component';
 registerLocaleData(en);
 
 
@@ -48,6 +51,9 @@ registerLocaleData(en);
     DashboardComponent,
     ListProfileComponent,
     ListProjectComponent,
+    ProjectComponent,
+    DetalProjectComponent,
+    FormProjectComponent,
   ],
   imports: [
     BrowserModule,

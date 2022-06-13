@@ -21,5 +21,13 @@ export class ListProjectComponent implements OnInit {
       this.listProject = data
     })
   }
+  onRemoveProject(id: number | string){
+    const confirm = window.confirm("Bạn có chắc muốn xóa không ?")
+    if(confirm){
+      this.projectService.removeProject(id).subscribe(()=>{
+          this.listProject = this.listProject.filter(item => item.id !== id);
+      })
+    }
+  }
 
 }

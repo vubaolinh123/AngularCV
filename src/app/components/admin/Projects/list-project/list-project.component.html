@@ -4,7 +4,7 @@
             <h1 class="text-3xl font-bold text-gray-900">Admin Project</h1>
         </div>
     </header>
-    <main>
+    <main class="max-w-5xl mx-auto px-5">
         <table>
             <thead>
                 <tr>
@@ -54,11 +54,11 @@
                     <td class="px-6 py-4 whitespace-nowrap">{{project.time}}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a routerLink="profile/{{project.id}}/edit"
+                        <a routerLink="/admin/project/{{project.id}}/edit"
                             class="text-indigo-600 hover:text-indigo-900 font-bold inline-block mx-[5px]">
                             Cập Nhật</a>
                         <button class="text-red-600 hover:text-red-900 font-bold
-                          inline-block">Xóa</button>
+                          inline-block" (click)="onRemoveProject(project.id!)">Xóa</button>
                     </td>
                 </tr>
             </tbody>
