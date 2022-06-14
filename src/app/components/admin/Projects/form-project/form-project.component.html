@@ -12,27 +12,34 @@
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                <form action="" (ngSubmit)="onSubmit()">
+                                <form nz-form [formGroup]="validateForm" (ngSubmit)="onSubmit()">
                                     <div class="shadow overflow-hidden sm:rounded-md">
                                         <div class="px-4 py-5 bg-white sm:p-6">
                                             <div class="grid grid-cols-6 gap-6">
-                                                <div class="col-span-6 sm:col-span-3">
-                                                    <label class="block text-sm font-medium text-gray-700">Name</label>
-                                                    <input type="text" placeholder="Enter Name"
-                                                        [(ngModel)]="project.name" name="name"
-                                                        class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
 
-                                                </div>
+                                                <nz-form-item class="col-span-6 sm:col-span-3">
+                                                    <nz-form-control nzErrorTip="Please input your Name!">
+                                                        <h2 class="block text-sm font-medium text-gray-700">Name</h2>
+                                                        <nz-input-group>
+                                                            <input type="text" placeholder="Enter Name"
+                                                                [(ngModel)]="project.name" name="name" nz-input
+                                                                formControlName="name"
+                                                                class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                                        </nz-input-group>
+                                                    </nz-form-control>
+                                                </nz-form-item>
 
-                                                <div class="col-span-6 sm:col-span-3">
-                                                    <label class="block text-sm font-medium text-gray-700">Image</label>
-                                                    <input type="text" [(ngModel)]="project.avatar" name="avatar"
-                                                        placeholder="Enter Link Image"
-                                                        class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-                                                    <img src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg"
-                                                        id="img-preview" width="200" />
-
-                                                </div>
+                                                <nz-form-item class="col-span-6 sm:col-span-3">
+                                                    <nz-form-control nzErrorTip="Please input your Link Image!">
+                                                        <h2 class="block text-sm font-medium text-gray-700">Avatar</h2>
+                                                        <nz-input-group>
+                                                            <input type="text" placeholder="Enter Link "
+                                                                [(ngModel)]="project.avatar" name="name" nz-input
+                                                                formControlName="avatar"
+                                                                class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                                        </nz-input-group>
+                                                    </nz-form-control>
+                                                </nz-form-item>
 
                                                 <div class="col-span-6 sm:col-span-4">
                                                     <label class="block text-sm font-medium text-gray-700">Desc</label>
@@ -41,22 +48,32 @@
                                                 </div>
 
 
-                                                <div class="col-span-6 sm:col-span-3">
-                                                    <label
-                                                        class="block text-sm font-medium text-gray-700">Category</label>
-                                                    <input [(ngModel)]="project.category" type="text" name="category"
-                                                        placeholder="Enter Category"
-                                                        class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-                                                </div>
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label class="block text-sm font-medium text-gray-700">Time</label>
-                                                <input [(ngModel)]="project.time" name="time" type="number" min="0"
-                                                    placeholder="Enter Time"
-                                                    class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                                <nz-form-item class="col-span-6 sm:col-span-3">
+                                                    <nz-form-control nzErrorTip="Please input your Link Category!">
+                                                        <h2 class="block text-sm font-medium text-gray-700">Category
+                                                        </h2>
+                                                        <nz-input-group>
+                                                            <input type="text" placeholder="Enter Category "
+                                                                [(ngModel)]="project.category" name="name" nz-input
+                                                                formControlName="category"
+                                                                class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                                        </nz-input-group>
+                                                    </nz-form-control>
+                                                </nz-form-item>
 
                                             </div>
+
+                                            <nz-form-item class="col-span-6 sm:col-span-3">
+                                                <nz-form-control nzErrorTip="Please input your Time!">
+                                                    <h2 class="block text-sm font-medium text-gray-700">Time</h2>
+                                                    <nz-input-group>
+                                                        <input type="text" placeholder="Enter Time "
+                                                            [(ngModel)]="project.time" name="name" nz-input
+                                                            formControlName="time"
+                                                            class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                                    </nz-input-group>
+                                                </nz-form-control>
+                                            </nz-form-item>
                                         </div>
                                     </div>
                                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">

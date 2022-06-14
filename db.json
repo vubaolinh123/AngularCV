@@ -60,6 +60,14 @@
       "time": "2017",
       "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ex officiis libero quae unde id quod, recusandae eos maiores obcaecati doloribus sit a. Nisi dolor, fugiat deleniti quia dignissimos et. Nisi dolor, fugiat deleniti quia dignissimos et. Nisi dolor, fugiat deleniti quia dignissimos et.",
       "avatar": "https://i.imgur.com/0nlQmQL.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Vũ Bảo Linh",
+      "category": "Đồ ăn 1",
+      "time": "2022",
+      "desc": "",
+      "avatar": "https://lh3.googleusercontent.com/a-/AOh14GhGY0dwqgkxDujRJqItzRmE6yZSUa1DN9wu2ISgcg=s360-p-rw-no"
     }
   ],
   "blog": [
