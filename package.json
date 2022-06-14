@@ -2,10 +2,10 @@
   "name": "angular-cv",
   "version": "0.0.0",
   "scripts": {
+    "start:server": "json-server-auth --watch db.json --port 3000",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "start:server": "json-server-auth --watch db.json --port 3000",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
