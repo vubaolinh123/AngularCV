@@ -1,4 +1,4 @@
-import { IProject } from './../models/project';
+import { IProject, IProjectCate } from './../models/project';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -7,19 +7,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProjectService {
-  API_URL: string = 'http://localhost:3000/project';
   constructor(private http: HttpClient) { }
 
   getProject(): Observable<IProject[]> {
-    return this.http.get<IProject[]>(this.API_URL)
+    return this.http.get<IProject[]>("http://localhost:3000/project?_expand=cateProject")
   }
 
   getThreeProject(): Observable<IProject[]> {
-    return this.http.get<IProject[]>('http://localhost:3000/project?_start=0&_end=3')
+    return this.http.get<IProject[]>('http://localhost:3000/project?_expand=cateProject&_start=0&_end=3')
   }
 
   getOneProject(id: number | string): Observable<IProject>{
-    return this.http.get<IProject>(`http://localhost:3000/project/${id}`)
+    return this.http.get<IProject>(`http://localhost:3000/project/${id}?_expand=cateProject`)
   }
 
   addProject(project: IProject): Observable<IProject>{
@@ -31,5 +30,20 @@ export class ProjectService {
   removeProject(id: number | string): Observable<IProject[]>{
     return this.http.delete<IProject[]>(`http://localhost:3000/project/${id}`)
   }
-
+  // CATEGORY PROJECT
+  getAllCate(): Observable<IProjectCate[]>{
+    return this.http.get<IProjectCate[]>(`http://localhost:3000/cateProjects`)
+  }
+  AddCate(category: IProjectCate): Observable<IProjectCate>{
+    return this.http.post<IProjectCate>(`http://localhost:3000/cateProjects`, category)
+  }
+  updateCate(category: IProjectCate): Observable<IProjectCate>{
+    return this.http.put<IProject>(`http://localhost:3000/cateProjects/${category.id}`, category)
+  }
+  getOneCate(id: number | string): Observable<IProjectCate>{
+    return this.http.get<IProjectCate>(`http://localhost:3000/cateProjects/${id}`)
+  }
+  removeCate(id: number | string): Observable<IProjectCate[]>{
+    return this.http.delete<IProjectCate[]>(`http://localhost:3000/cateProjects/${id}`)
+  }
 }

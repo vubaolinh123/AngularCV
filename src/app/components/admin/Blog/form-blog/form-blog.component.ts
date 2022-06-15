@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { IBlog } from 'src/app/models/blog';
+import { IBlog, IBlogCate } from 'src/app/models/blog';
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/services/blog.service';
 
@@ -10,10 +10,12 @@ import { BlogService } from 'src/app/services/blog.service';
 })
 export class FormBlogComponent implements OnInit {
  id: number | null | string = null
+ BlogCate!: IBlogCate[];
   blog: IBlog= {
     id: 0,
     name: "",
     time: "", 
+    cateBlogId: 0,
     author: "",
     desc: ""
   }
@@ -21,13 +23,28 @@ export class FormBlogComponent implements OnInit {
     private route: ActivatedRoute,
     private blogService: BlogService,
     private router: Router,
-  ) { }
+  ) { 
+     this.getAllCateBlog()
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;    
     if(this.id != null){
-      this.blogService.getOneBlog(this.id).subscribe(data => this.blog = data)
+      this.blogService.getOneBlog(this.id).subscribe(data => {
+        this.blog = data
+      })
     }
+  }
+
+   getAllCateBlog(){
+       this.blogService.getAllCate().subscribe(data=>{
+        this.BlogCate = data
+        
+      })
+   }
+
+   changeCate(e: any){
+    this.blog.cateBlogId = e.target.value
   }
 
   onSubmit(){

@@ -32,10 +32,14 @@ export class HomePageComponent implements OnInit {
     this.projectService.getProject().subscribe(data=> this.listProject = data)
   }
   showTwoBlog(){
-    this.blogService.getTwoBlog().subscribe(data=> this.twoBlog = data)
+    this.blogService.getTwoBlog().subscribe(data=> {
+      this.twoBlog = data
+    })
   }
   showThreeProject(){
-    this.projectService.getThreeProject().subscribe(data=> this.threeProject = data)
+    this.projectService.getThreeProject().subscribe(data=> {
+      this.threeProject = data      
+    })
   }
 
 }

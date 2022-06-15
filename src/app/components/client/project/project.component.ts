@@ -18,7 +18,10 @@ export class ProjectComponent implements OnInit {
   }
 
   showProject(){
-    this.projectService.getProject().subscribe(data=> this.listProject = data)
+    this.projectService.getProject().subscribe(data =>{
+      this.listProject = data
+    })
+    
   }
   
 

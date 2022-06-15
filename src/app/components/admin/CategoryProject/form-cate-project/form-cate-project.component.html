@@ -1,0 +1,53 @@
+<div>
+    <div>
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-gray-900" *ngIf="id == null">Add New Category Project</h1>
+                <h1 class="text-3xl font-bold text-gray-900" *ngIf="id != null ">Update Category Project</h1>
+            </div>
+        </header>
+        <main>
+            <div class="max-w-7xl mx-auto py-6 ">
+                <div class="flex flex-col">
+                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <form nz-form [formGroup]="validateForm" (ngSubmit)="onSubmit()">
+                                    <div class="shadow overflow-hidden sm:rounded-md">
+                                        <div class="px-4 py-5 bg-white sm:p-6">
+                                            <div class="grid grid-cols-6 gap-6">
+
+                                                <nz-form-item class="col-span-6 sm:col-span-3">
+                                                    <nz-form-control nzErrorTip="Please input your Name!">
+                                                        <h2 class="block text-sm font-medium text-gray-700">Name</h2>
+                                                        <nz-input-group>
+                                                            <input type="text" placeholder="Enter Name"
+                                                                [(ngModel)]="catePro.name" name="name" nz-input
+                                                                formControlName="name"
+                                                                class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                                        </nz-input-group>
+                                                    </nz-form-control>
+                                                </nz-form-item>
+                                            </div>
+                                        </div>
+                                        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                            <button *ngIf="id == null "
+                                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Add New
+                                            </button>
+                                            <button *ngIf="id != null "
+                                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

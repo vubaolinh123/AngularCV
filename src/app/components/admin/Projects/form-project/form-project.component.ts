@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProject } from './../../../../models/project';
+import { IProject, IProjectCate } from './../../../../models/project';
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/app/services/project.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -12,10 +12,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormProjectComponent implements OnInit {
   id: number | null | string = null
   validateForm!: FormGroup; 
+  ProjectCate!: IProjectCate[];
   project: IProject = {
     id: 0,
     name: "",
-    category: "", 
+    cateProjectId: 0, 
     time: "",
     desc: "",
     avatar: ""
@@ -25,22 +26,33 @@ export class FormProjectComponent implements OnInit {
     private projectService: ProjectService,
     private router: Router,
     private fb: FormBuilder
-  ) { }
+  ) { 
+    this.getAllCatePro()
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
      this.validateForm = this.fb.group({
       name: [null, [Validators.required]],
-      category: [null, [Validators.required]],
+      cateProject: ['', [Validators.required]],
       time: [null, [Validators.required]],
       avatar: [null, [Validators.required]],
+      desc: [null, [Validators.required]],
     });
     if(this.id != null){
       this.projectService.getOneProject(this.id).subscribe(data => this.project = data)
     }
-
-    
   }
+  
+  getAllCatePro(){
+    this.projectService.getAllCate().subscribe(data =>{
+       this.ProjectCate = data
+    })
+  }
+  changeCate(e: any){
+    this.project.cateProjectId = e.target.value
+  }
+
   onSubmit(){
     const id = this.route.snapshot.paramMap.get('id')!;
     
@@ -53,6 +65,7 @@ export class FormProjectComponent implements OnInit {
         }, 2000)
       })
      }else{
+      console.log(this.project);
        this.projectService.addProject(this.project).subscribe(data=>{
         setTimeout(() => {
           this.router.navigateByUrl('/admin/project');
@@ -67,7 +80,6 @@ export class FormProjectComponent implements OnInit {
         }
       });
     }
-
   }
 
 }

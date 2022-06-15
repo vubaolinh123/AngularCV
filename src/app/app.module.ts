@@ -38,6 +38,8 @@ import { ListBlogComponent } from './components/admin/Blog/list-blog/list-blog.c
 import { FormBlogComponent } from './components/admin/Blog/form-blog/form-blog.component';
 import { DangkyComponent } from './components/client/dangky/dangky.component';
 import { DangnhapComponent } from './components/client/dangnhap/dangnhap.component';
+import { ListCateProjectComponent } from './components/admin/CategoryProject/list-cate-project/list-cate-project.component';
+import { FormCateProjectComponent } from './components/admin/CategoryProject/form-cate-project/form-cate-project.component';
 registerLocaleData(en);
 
 
@@ -63,6 +65,8 @@ registerLocaleData(en);
     FormBlogComponent,
     DangkyComponent,
     DangnhapComponent,
+    ListCateProjectComponent,
+    FormCateProjectComponent,
   ],
   imports: [
     BrowserModule,

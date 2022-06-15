@@ -32,13 +32,17 @@
                                                 </div>
 
 
-                                                <div class="col-span-6 sm:col-span-3">
-                                                    <label
-                                                        class="block text-sm font-medium text-gray-700">Author</label>
-                                                    <input [(ngModel)]="blog.author" type="text" name="author"
-                                                        placeholder="Enter Author"
-                                                        class="mt-1 py-2 px-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-                                                </div>
+                                                <nz-form-item class="col-span-6 sm:col-span-3">
+                                                    <nz-form-control>
+                                                        <h2 class="block text-sm font-medium text-gray-700">Category
+                                                        </h2>
+                                                        <select name="" id="" class="border-2 px-2 py-1"
+                                                            (change)="changeCate($event)" [(ngModel)]="blog.cateBlogId">
+                                                            <option *ngFor="let cateBlog of BlogCate"
+                                                                value={{cateBlog.id}}>{{cateBlog.name}}</option>
+                                                        </select>
+                                                    </nz-form-control>
+                                                </nz-form-item>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3">

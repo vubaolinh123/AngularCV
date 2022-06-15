@@ -1,3 +1,4 @@
+import { FormCateProjectComponent } from './components/admin/CategoryProject/form-cate-project/form-cate-project.component';
 import { DangnhapComponent } from './components/client/dangnhap/dangnhap.component';
 import { FormBlogComponent } from './components/admin/Blog/form-blog/form-blog.component';
 import { ListBlogComponent } from './components/admin/Blog/list-blog/list-blog.component';
@@ -13,6 +14,7 @@ import { ClientLayoutComponent } from './layouts/client-layout/client-layout.com
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { ListCateProjectComponent } from './components/admin/CategoryProject/list-cate-project/list-cate-project.component';
 
 const routes: Routes = [
   {path: "", component: ClientLayoutComponent,
@@ -30,6 +32,9 @@ const routes: Routes = [
       {path: "project", component: ListProjectComponent},
       {path: "project/add", component: FormProjectComponent},
       {path: "project/:id/edit", component: FormProjectComponent},
+      {path: "category", component: ListCateProjectComponent},
+      {path: "category/add", component: FormCateProjectComponent},
+      {path: "category/:id/edit", component: FormCateProjectComponent},
        {path: "blog", component: ListBlogComponent},
        {path: "blog/add", component: FormBlogComponent},
       {path: "blog/:id/edit", component: FormBlogComponent},
