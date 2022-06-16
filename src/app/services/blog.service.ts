@@ -30,4 +30,13 @@ export class BlogService {
   getAllCate(): Observable<IBlogCate[]>{
     return this.http.get<IBlogCate[]>(` http://localhost:3000/cateBlogs`)
   }
+  AddCate(category: IBlogCate): Observable<IBlogCate>{
+    return this.http.post<IBlogCate>(`http://localhost:3000/cateBlogs`, category)
+  }
+  updateCate(category: IBlogCate): Observable<IBlogCate>{
+    return this.http.put<IBlogCate>(`http://localhost:3000/cateBlogs/${category.id}`, category)
+  }
+  getOneCate(id: number | string): Observable<IBlogCate>{
+    return this.http.get<IBlogCate>(`http://localhost:3000/cateBlogs/${id}`)
+  }
 }

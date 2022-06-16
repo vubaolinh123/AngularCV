@@ -8,17 +8,19 @@
         <div class="section-body">
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="recent-post__item" *ngFor="let blog of twoBlog">
-                    <h3 class="recent-post__title">
-                        {{blog.name}}
-                    </h3>
-                    <div class="recent-post__meta">
-                        <span>{{blog.time}}</span>
-                        <span>|</span>
-                        <a href="">{{blog.cateBlog?.name}}</a>
-                    </div>
-                    <p class="recent-post__desc">
-                        {{blog.desc}}
-                    </p>
+                    <a routerLink="/blog/{{blog.id}}">
+                        <h3 class="recent-post__title">
+                            {{blog.name}}
+                        </h3>
+                        <div class="recent-post__meta">
+                            <span>{{blog.time}}</span>
+                            <span>|</span>
+                            <a href="">{{blog.cateBlog?.name}}</a>
+                        </div>
+                        <p class="recent-post__desc">
+                            {{blog.desc}}
+                        </p>
+                    </a>
                 </div>
 
             </div>

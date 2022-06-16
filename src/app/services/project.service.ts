@@ -46,4 +46,5 @@ export class ProjectService {
   removeCate(id: number | string): Observable<IProjectCate[]>{
     return this.http.delete<IProjectCate[]>(`http://localhost:3000/cateProjects/${id}`)
   }
+  
 }

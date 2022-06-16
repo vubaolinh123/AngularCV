@@ -40,6 +40,9 @@ import { DangkyComponent } from './components/client/dangky/dangky.component';
 import { DangnhapComponent } from './components/client/dangnhap/dangnhap.component';
 import { ListCateProjectComponent } from './components/admin/CategoryProject/list-cate-project/list-cate-project.component';
 import { FormCateProjectComponent } from './components/admin/CategoryProject/form-cate-project/form-cate-project.component';
+import { DetalBlogComponent } from './components/client/detal-blog/detal-blog.component';
+import { ListCateBlogComponent } from './components/admin/CategoryBlog/list-cate-blog/list-cate-blog.component';
+import { FormCateBlogComponent } from './components/admin/CategoryBlog/form-cate-blog/form-cate-blog.component';
 registerLocaleData(en);
 
 
@@ -67,6 +70,9 @@ registerLocaleData(en);
     DangnhapComponent,
     ListCateProjectComponent,
     FormCateProjectComponent,
+    DetalBlogComponent,
+    ListCateBlogComponent,
+    FormCateBlogComponent,
   ],
   imports: [
     BrowserModule,

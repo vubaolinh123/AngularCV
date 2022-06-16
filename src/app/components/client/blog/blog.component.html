@@ -6,17 +6,19 @@
         <div class="blog ">
             <div class="grid md:grid-cols-1 gap-4  md:pr-[150px]">
                 <div class="blog-item " *ngFor="let blog of listBlog">
-                    <h3 class="blog-item__title">
-                        {{blog.name}}
-                    </h3>
-                    <div class="blog-item__meta">
-                        <span>{{blog.time}}</span>
-                        <span>|</span>
-                        <a href="" class="text-[#8695A4]">{{blog.cateBlog?.name}}</a>
-                    </div>
-                    <p class="blog-item__desc md:pr-[20px]">
-                        {{blog.desc}}
-                    </p>
+                    <a routerLink="/blog/{{blog.id}}">
+                        <h3 class="blog-item__title">
+                            {{blog.name}}
+                        </h3>
+                        <div class="blog-item__meta">
+                            <span>{{blog.time}}</span>
+                            <span>|</span>
+                            <a href="" class="text-[#8695A4]">{{blog.cateBlog?.name}}</a>
+                        </div>
+                        <p class="blog-item__desc md:pr-[20px]">
+                            {{blog.desc}}
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
