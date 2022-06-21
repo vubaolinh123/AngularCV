@@ -18,6 +18,7 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
 import { ListCateProjectComponent } from './components/admin/CategoryProject/list-cate-project/list-cate-project.component';
 import { DetalBlogComponent } from './components/client/detal-blog/detal-blog.component';
 import { FormCateBlogComponent } from './components/admin/CategoryBlog/form-cate-blog/form-cate-blog.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {path: "", component: ClientLayoutComponent,
@@ -29,7 +30,7 @@ const routes: Routes = [
            { path: 'project/:id', component: DetalProjectComponent },
         ]},
     {path: "login", component: DangnhapComponent},
-  {path: "admin", component: AdminLayoutComponent,
+  {path: "admin", component: AdminLayoutComponent, canActivate: [AuthGuard],
   children: [
       {path: "", component: ListProjectComponent},
       {path: "profile", component: ListProfileComponent},

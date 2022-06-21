@@ -81,11 +81,11 @@
   "blog": [
     {
       "id": 1,
-      "name": "Post 01",
+      "name": "Những dự báo 10 Xu hướng công nghệ phổ biến năm 2022",
       "time": "12 Feb 2020",
       "cateBlogId": 1,
       "author": "author 1",
-      "desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+      "desc": "Tại bất kỳ thời điểm nào, nhất là thời đại công nghệ thông tin, thông tin giá trị là thứ sinh lời nhiều nhất. "
     },
     {
       "id": 2,
@@ -143,11 +143,11 @@
   "cateProjects": [
     {
       "id": 1,
-      "name": "Project 001 Category"
+      "name": "HTML CSS"
     },
     {
       "id": 2,
-      "name": "Project 02 Category"
+      "name": "ReactJS"
     },
     {
       "id": 3,
